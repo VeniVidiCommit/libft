@@ -6,14 +6,15 @@
 /*   By: viroques <viroques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 15:48:56 by viroques          #+#    #+#             */
-/*   Updated: 2019/10/08 15:49:48 by viroques         ###   ########.fr       */
+/*   Updated: 2019/10/11 20:54:47 by viroques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int		ft_isdigit(int c)
 {
 	if (c >= '0' && c <= '9')
 		return (1);
-	else
-		return (0);
+	return (0);
 }

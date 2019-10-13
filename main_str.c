@@ -6,7 +6,7 @@
 /*   By: viroques <viroques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 16:14:00 by viroques          #+#    #+#             */
-/*   Updated: 2019/10/11 21:15:09 by viroques         ###   ########.fr       */
+/*   Updated: 2019/10/13 16:59:29 by viroques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,16 +43,25 @@ int		main(void)
 	// printf("%d \n", atoi("32"));
 	// printf("%d \n", ft_atoi("32"));
 	
-	size_t nmemb;
-	size_t size;
-	void	*str;
-	void	*str2;
-	nmemb = 4;
-	size = 10;
-	str = calloc(nmemb, size);
-	str2 = ft_calloc (nmemb, size);
+	// size_t nmemb;
+	// size_t size;
+	// void	*str;
+	// void	*str2;
+	// nmemb = 4;
+	// size = 10;
+	// str = calloc(nmemb, size);
+	// str2 = ft_calloc (nmemb, size);
 
-	printf("%s\n", memset(str, 48, size));
-	printf("%s\n", ft_memset(str, 48, size));
+	// printf("%s\n", memset(str, 48, size));
+	// printf("%s\n", ft_memset(str, 48, size));
 
+	// strlcat
+	// char dest[20] = "ds";
+	// char dest2[20] = "ds";
+	// char src[] = "bonjour";
+	// size_t count = sizeof(dest);
+	// strlcat(dest, src, count);
+	// ft_strlcat(dest2, src, count);
+	// printf("%s\n", dest);
+	// printf("%s\n", dest2);
 	}

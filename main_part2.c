@@ -6,7 +6,7 @@
 /*   By: viroques <viroques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/13 17:15:21 by viroques          #+#    #+#             */
-/*   Updated: 2019/10/13 23:06:09 by viroques         ###   ########.fr       */
+/*   Updated: 2019/10/14 20:49:09 by viroques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,6 @@ int     main(void)
 
 // 	char s[] = "bonjourn es amnis";
 // 	ft_putendl_fd(s,1);
-	ft_putnbr_fd(INT_MIN, 1);
+	// ft_putnbr_fd(INT_MIN, 1);
 
 }

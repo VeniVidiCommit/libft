@@ -1,18 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_lstaddback.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: viroques <viroques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/08 12:03:23 by viroques          #+#    #+#             */
-/*   Updated: 2019/10/14 16:45:10 by viroques         ###   ########.fr       */
+/*   Created: 2019/10/14 20:55:15 by viroques          #+#    #+#             */
+/*   Updated: 2019/10/14 22:10:39 by viroques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+void	ft_lstadd_back(t_list **alst, t_list *new)
 {
-	ft_memset(s, 0, n);
+	t_list	*tmp;
+
+	if (*alst == NULL)
+		*alst = new;
+	tmp = ft_lstlast(*(alst));
+	tmp->next = new;
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: victorianroques <victorianroques@studen    +#+  +:+       +#+        */
+/*   By: viroques <viroques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/08 15:39:57 by viroques          #+#    #+#             */
-/*   Updated: 2019/10/11 20:39:01 by victorianro      ###   ########.fr       */
+/*   Created: 2019/10/14 18:16:07 by viroques          #+#    #+#             */
+/*   Updated: 2019/10/14 18:16:11 by viroques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

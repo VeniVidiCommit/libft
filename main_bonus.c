@@ -6,7 +6,7 @@
 /*   By: viroques <viroques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/14 16:18:04 by viroques          #+#    #+#             */
-/*   Updated: 2019/10/14 22:20:23 by viroques         ###   ########.fr       */
+/*   Updated: 2019/10/16 18:27:45 by viroques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,38 +14,30 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+void	ft_plusone(void *s)
+{
+	printf("passage %s\n", s);
+}
 int		main(void)
 {
-	// void	*content;
-	// t_list	*elem;
-	// char 	a[] = "ewoifjeowifjewoifj";
-	// int b;
-
-	// b = 42;
-	// elem = ft_lstnew(&b);
-	// printf("%d\n", *(int*)elem->content);
-
-	// list_add_front
-	t_list *new;
-	t_list *begin;
-	t_list *alst;
+	t_list	*begin;
 	t_list	*elem;
-	t_list	*elem2;
 	t_list	*tmp;
 
-	tmp = malloc(sizeof(t_list));
-	begin = ft_lstnew("toto");
-	new = ft_lstnew("toto");
-	begin->next = new;
-	alst = ft_lstnew("mouvtop");
-	ft_lstadd_front(&begin, alst);
-	elem2 = ft_lstnew("fin");
-	ft_lstadd_back(&begin, elem2);
-	while (alst)
+	begin = ft_lstnew("bonjour");
+	elem = ft_lstnew("hellow");
+	ft_lstadd_back(&begin, elem);
+	// tmp = begin;
+	// ft_lstiter(begin, &ft_plusone);
+	tmp = ft_lstmap(begin, &ft_plusone);
+	while (tmp)
 	{
-		printf("%s\n", (char*)alst->content);
-		alst = alst->next;
+		printf("%s\n", tmp->content);
+		tmp = tmp->next;
 	}
-	printf("%d\n", ft_lstsize(begin));
-
+	while (begin)
+	{
+		printf(" ori %s\n", begin->content);
+		begin = begin->next;
+	}
 }

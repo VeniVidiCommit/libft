@@ -6,7 +6,7 @@
 /*   By: viroques <viroques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 20:07:54 by victorianro       #+#    #+#             */
-/*   Updated: 2019/10/11 20:53:45 by viroques         ###   ########.fr       */
+/*   Updated: 2019/10/22 20:29:54 by viroques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int     ft_atoi(const char *nptr)
 {
-    int i;
+    int i; 
     int negativ;
     int number;
 

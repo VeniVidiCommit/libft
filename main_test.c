@@ -6,13 +6,15 @@
 /*   By: viroques <viroques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 14:39:29 by viroques          #+#    #+#             */
-/*   Updated: 2019/10/23 17:35:32 by viroques         ###   ########.fr       */
+/*   Updated: 2019/10/23 19:03:07 by viroques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include "libft.h"
+#include <limits.h>
 #include <ctype.h>
+
 #define ERROR_NUL(x, y) (x != y ? printf("\033[0;31mKO\e[0m\n") : printf("\033[0;32mOK\e[0m\n"))
 #define ERROR_STR(x) (x != 0 ? printf("\033[0;31mKO\e[0m\n") : printf("\033[0;32mOK\e[0m\n"))
 #define ERROR_INT(x,y) (x != y ? printf("\033[0;31mKO\e[0m\n") : printf("\033[0;32mOK\e[0m\n"))
@@ -261,5 +263,84 @@ int		main(int ac, char **argv)
 		ori_size = strlcat(dest13, src3, n);
 		ERROR_INT(me_size, ori_size);
 		ERROR_STR(strncmp(dest12, dest13, n));
+
+		//ft_strnstr
+		printf("ft_strnstr\n");
+		char s2[] = "bonjour comment vont-je";
+		char s3[] = "vont";
+		n = 20;
+		me = ft_strnstr(s2, s3, n);
+		ori = strnstr(s2, s3, n);
+		ERROR_STR(strncmp(me, ori, n));
+	
+		me = ft_strnstr(s2, "", n);
+		ori = strnstr(s2, "", n);
+		ERROR_STR(strncmp(me, ori, n));
+
+		me = ft_strnstr(s2, "vous", n);
+		ori = strnstr(s2, "vous", n);
+		ERROR_NUL(me,ori);
+
+		me = ft_strnstr("", "vous", n);
+		ori = strnstr("", "vous", n);
+		ERROR_NUL(me,ori);
+
+		n = 5;
+		me = ft_strnstr(s2, "je", n);
+		ori = strnstr(s2, "je", n);
+		ERROR_NUL(me, ori);
+
+		//ft_atoi
+		printf("ft_atoi\n");
+		me_int = ft_atoi("12341ab23");
+		ori_int = atoi("12341ab23");
+		ERROR_INT(me_int, ori_int);
+
+		me_int = ft_atoi("-123412w3");
+		ori_int = atoi("-123412w3");
+		ERROR_INT(me_int, ori_int);
+
+		me_int = ft_atoi("0");
+		ori_int = atoi("0");
+		ERROR_INT(me_int, ori_int);
+
+		me_int = ft_atoi("");
+		ori_int = atoi("");
+		ERROR_INT(me_int, ori_int);
+
+		me_int = ft_atoi("+-543");
+		ori_int = atoi("+-543");
+		ERROR_INT(me_int, ori_int);
+
+		me_int = ft_atoi("avc543");
+		ori_int = atoi("avc543");
+		ERROR_INT(me_int, ori_int);
+
+		me_int = ft_atoi("-2147483648");
+		ori_int = atoi("-2147483648");
+		ERROR_INT(me_int, ori_int);
+
+		//ft_calloc
+		size_t nmemb = 2;
+		size_t  size3 = 15;
+		printf("ft_calloc\n");
+		me = ft_calloc(nmemb, size3);
+		ori = ft_calloc(nmemb, size3);
+		ERROR_STR(strncmp(me, ori , size3));
+
+		nmemb = 0;
+		me = ft_calloc(nmemb, size3);
+		ori = ft_calloc(nmemb, size3);
+		ERROR_STR(strcmp(me, ori));
+
+		//ft_strdup
+		printf("ft_strdup\n");
+		me = ft_strdup("Hellow");
+		ori = ft_strdup("Hellow");
+		ERROR_STR(strcmp(me, ori));
+
+		me = ft_strdup("");
+		ori = ft_strdup("");
+		ERROR_STR(strcmp(me, ori));
 	}
 }

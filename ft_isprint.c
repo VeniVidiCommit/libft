@@ -6,7 +6,7 @@
 /*   By: viroques <viroques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 16:01:21 by viroques          #+#    #+#             */
-/*   Updated: 2019/10/11 20:54:44 by viroques         ###   ########.fr       */
+/*   Updated: 2019/10/23 14:37:34 by viroques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,5 @@ int		ft_isprint(int c)
 {
 	if (c > 31 && c < 127)
 		return (1);
-	return (0); 
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: viroques <viroques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 19:03:30 by victorianro       #+#    #+#             */
-/*   Updated: 2019/10/22 15:31:46 by viroques         ###   ########.fr       */
+/*   Updated: 2019/10/23 17:57:00 by viroques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char    *ft_strnstr(const   char *s1, const char *s2, size_t n)
   
     i = 0;
     j = 0;
+    if (s2[i] == '\0')
+        return ((char)s1);
     while (s1[i] && i < n)
     {
         j = 0;

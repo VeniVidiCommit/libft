@@ -6,7 +6,7 @@
 /*   By: viroques <viroques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 14:39:29 by viroques          #+#    #+#             */
-/*   Updated: 2019/10/23 19:03:07 by viroques         ###   ########.fr       */
+/*   Updated: 2019/10/24 20:36:28 by viroques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,17 @@
 #define ERROR_STR(x) (x != 0 ? printf("\033[0;31mKO\e[0m\n") : printf("\033[0;32mOK\e[0m\n"))
 #define ERROR_INT(x,y) (x != y ? printf("\033[0;31mKO\e[0m\n") : printf("\033[0;32mOK\e[0m\n"))
 
+char	mapi(unsigned int i, char c)
+{
+	if (c >= 'a' && c <= 'z')
+		return (c - 32);
+	return (c);
+}
+
 int		main(int ac, char **argv)
 {
-	if ( ac == 2)
+
+	if ( argv[1][0] == '1')
 	{
 		char s[100];
 		char s1[100];
@@ -66,9 +74,8 @@ int		main(int ac, char **argv)
 		ori = memchr(found, c, n);
 		printf("\nft_memchr TEST\n");
 		ERROR_STR(strncmp(ori, me, n));
-		char found1[] = "";
-		me = ft_memchr(found, c, n);
-		ori = memchr(found, c, n); 
+		me = ft_memchr("", c, n);
+		ori = memchr("", c, n); 
 		ERROR_STR(strncmp(ori, me, n));
 
 		//memcmp
@@ -325,22 +332,83 @@ int		main(int ac, char **argv)
 		size_t  size3 = 15;
 		printf("ft_calloc\n");
 		me = ft_calloc(nmemb, size3);
-		ori = ft_calloc(nmemb, size3);
+		ori = calloc(nmemb, size3);
 		ERROR_STR(strncmp(me, ori , size3));
 
 		nmemb = 0;
 		me = ft_calloc(nmemb, size3);
-		ori = ft_calloc(nmemb, size3);
+		ori = calloc(nmemb, size3);
 		ERROR_STR(strcmp(me, ori));
 
 		//ft_strdup
 		printf("ft_strdup\n");
 		me = ft_strdup("Hellow");
-		ori = ft_strdup("Hellow");
+		ori = strdup("Hellow");
 		ERROR_STR(strcmp(me, ori));
 
 		me = ft_strdup("");
-		ori = ft_strdup("");
+		ori = strdup("");
 		ERROR_STR(strcmp(me, ori));
+	}
+	if (argv[2][0] == '2' || argv[1][0] == '2')
+	{
+		void *output;
+
+		printf("PART 2\n");
+		printf("ft_substr\n");
+		output = ft_substr("Bonjour les amis", 8, 20);
+		ERROR_STR(strcmp(output, "les amis")); 
+		output = ft_substr("Bonjour les amis", 8, 3);
+		ERROR_STR(strcmp(output, "le")); 
+		output = ft_substr("Bonjour les amis", 25, 30);
+		ERROR_STR(strcmp(output, "")); 
+		output = ft_substr("", 5, 30);
+		ERROR_STR(strcmp(output, ""));
+
+		//ft_strjoin
+		printf("ft_itoa\n");
+		output = ft_itoa(156789);
+		ERROR_STR(strcmp(output, "156789"));
+		output = ft_itoa(0);
+		ERROR_STR(strcmp(output, "0"));
+		output = ft_itoa(INT_MIN);
+		ERROR_STR(strcmp(output, "-2147483648"));
+		output = ft_itoa(INT_MAX);
+		ERROR_STR(strcmp(output, "2147483647"));
+		
+		//ft_strmapi
+		printf("ft_strmapi\n");
+		output = ft_strmapi("abcdef", &mapi);
+		ERROR_STR(strcmp(output, "ABCDEF"));
+		output = ft_strmapi("", &mapi);
+		ERROR_STR(strcmp(output, ""));
+		output = ft_strmapi("123abcdefAS3e", &mapi);
+		ERROR_STR(strcmp(output, "123ABCDEFAS3E"));
+
+		//ft_putchar_fd, ft_putstr_fd, ft_putendl and ft_putnbr_fd
+		printf("This is write with the function themself\n");
+		ft_putchar_fd('p', 1);
+		ft_putchar_fd('u', 1);
+		ft_putchar_fd('t', 1);
+		ft_putchar_fd('c', 1);
+		ft_putchar_fd('h', 1);
+		ft_putchar_fd('a', 1);
+		ft_putchar_fd('r', 1);
+		ft_putchar_fd(' ', 1);
+		ft_putstr_fd("ft_putstr_fd  ", 1 );
+		ft_putendl_fd("ft_putendl_fd", 1); 
+		ft_putnbr_fd(INT_MIN, 1);
+		ft_putchar_fd('\n', 1);
+		ft_putnbr_fd(0, 1);
+		ft_putchar_fd('\n', 1);
+		ft_putnbr_fd(INT_MAX, 1);
+		ft_putchar_fd('\n', 1);
+		ft_putnbr_fd(10, 1);
+		ft_putchar_fd('\n', 1);
+	}
+
+	if ( argv[3][0] == '3' || argv[2][0] == '3' || argv[1][0] == '3')
+	{
+		printf("BONUS PART \n");
 	}
 }

@@ -6,12 +6,12 @@
 /*   By: viroques <viroques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/13 18:38:01 by viroques          #+#    #+#             */
-/*   Updated: 2019/10/15 16:08:43 by viroques         ###   ########.fr       */
+/*   Updated: 2019/10/24 20:24:02 by viroques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#define malloc(x) 0
+
 char	**ft_count_string(const char *s, char c)
 {
 	int		string;
@@ -22,7 +22,7 @@ char	**ft_count_string(const char *s, char c)
 	string = 0;
 	while (s[i])
 	{
-		if(s[i] != c && (s[i + 1] == c || s[i + 1] == '\0'))
+		if (s[i] != c && (s[i + 1] == c || s[i + 1] == '\0'))
 			string++;
 	i++;
 	}
@@ -45,10 +45,10 @@ void	ft_count_letter(const char *s, char c, char **tab)
 		while (s[i] != c)  
 		{
 			letter++;
-			if(s[i] != c && (s[i + 1] == c || s[i + 1] == '\0'))
+			if (s[i] != c && (s[i + 1] == c || s[i + 1] == '\0'))
 				{
-					if(!(tab[string] = malloc(sizeof(char) * (letter + 1))))					{
-
+					if(!(tab[string] = malloc(sizeof(char) * (letter + 1))))
+					{
 						free(*tab);
 						return ;
 					}
@@ -74,7 +74,7 @@ void	ft_fill_tab(char const *s, char c, char **tab)
 		while (s[i] != c)
 		{
 			tab[string][letter] = s[i];
-		if(s[i] != c && (s[i + 1] == c || s[i + 1] == '\0'))
+		if (s[i] != c && (s[i + 1] == c || s[i + 1] == '\0'))
 			{
 				tab[string][letter + 1] = '\0';
 				string++;
@@ -90,7 +90,7 @@ char	**ft_split(char const *s, char c)
 {
 	char	**tab;
 
-	if(!(tab = ft_count_string(s, c)))
+	if (!(tab = ft_count_string(s, c)))
 		return (NULL);
 	ft_count_letter(s, c, tab);
 	ft_fill_tab(s, c, tab);

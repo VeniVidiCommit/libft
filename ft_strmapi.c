@@ -6,7 +6,7 @@
 /*   By: viroques <viroques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/13 22:34:41 by viroques          #+#    #+#             */
-/*   Updated: 2019/10/13 22:44:35 by viroques         ###   ########.fr       */
+/*   Updated: 2019/10/24 19:40:39 by viroques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	unsigned int	i;
+	size_t			i;
 	char			*map;
 
 	i = 0;

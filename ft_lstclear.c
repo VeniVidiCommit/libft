@@ -6,7 +6,7 @@
 /*   By: viroques <viroques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/15 16:17:46 by viroques          #+#    #+#             */
-/*   Updated: 2019/10/15 17:27:03 by viroques         ###   ########.fr       */
+/*   Updated: 2019/10/24 17:35:07 by viroques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,5 @@ void    ft_lstclear(t_list **lst, void (*del)(void*))
             ft_lstdelone(*lst, del);
             (*lst) = tmp;
         }
+    }
 }

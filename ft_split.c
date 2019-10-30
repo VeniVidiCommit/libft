@@ -6,7 +6,7 @@
 /*   By: viroques <viroques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/13 18:38:01 by viroques          #+#    #+#             */
-/*   Updated: 2019/10/24 20:24:02 by viroques         ###   ########.fr       */
+/*   Updated: 2019/10/30 14:48:02 by viroques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	**ft_count_string(const char *s, char c)
 	{
 		if (s[i] != c && (s[i + 1] == c || s[i + 1] == '\0'))
 			string++;
-	i++;
+		i++;
 	}
 	if (!(tab = (char**)malloc(sizeof(char*) * string + 1)))
 		return (NULL);
@@ -39,22 +39,20 @@ void	ft_count_letter(const char *s, char c, char **tab)
 
 	i = 0;
 	string = 0;
-	while(s[i])
+	letter = 0;
+	while (s[i])
 	{
-		letter = 0;
-		while (s[i] != c)  
-		{
+		if (s[i] != c)
 			letter++;
-			if (s[i] != c && (s[i + 1] == c || s[i + 1] == '\0'))
-				{
-					if(!(tab[string] = malloc(sizeof(char) * (letter + 1))))
-					{
-						free(*tab);
-						return ;
-					}
-				string++;
-				}
-				i++;
+		if (s[i] != c && (s[i + 1] == c || s[i + 1] == '\0'))
+		{
+			if (!(tab[string] = malloc(sizeof(char) * (letter + 1))))
+			{
+				while (tab[string--])
+					free(tab[string]);
+			}
+			string++;
+			letter = 0;
 		}
 		i++;
 	}
@@ -68,24 +66,25 @@ void	ft_fill_tab(char const *s, char c, char **tab)
 
 	i = 0;
 	string = 0;
+	letter = 0;
 	while (s[i])
 	{
-		letter = 0;
-		while (s[i] != c)
+		if (s[i] != c)
 		{
 			tab[string][letter] = s[i];
+			letter++;
+		}
 		if (s[i] != c && (s[i + 1] == c || s[i + 1] == '\0'))
-			{
-				tab[string][letter + 1] = '\0';
-				string++;
-			}
-		i++;
-		letter++;
+		{
+			tab[string][letter] = '\0';
+			string++;
+			letter = 0;
 		}
 		i++;
 	}
 	tab[string] = NULL;
 }
+
 char	**ft_split(char const *s, char c)
 {
 	char	**tab;

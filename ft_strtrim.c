@@ -6,7 +6,7 @@
 /*   By: viroques <viroques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/13 17:47:45 by viroques          #+#    #+#             */
-/*   Updated: 2019/10/24 16:59:57 by viroques         ###   ########.fr       */
+/*   Updated: 2019/10/30 18:25:42 by viroques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ int		ft_remove(char c, const char *set)
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char			*str;
-	unsigned int 	i;
-	unsigned int 	j;
+	size_t			i;
+	size_t			j;
 	size_t			len;
 
 	j = 0;

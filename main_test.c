@@ -6,7 +6,7 @@
 /*   By: viroques <viroques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 14:39:29 by viroques          #+#    #+#             */
-/*   Updated: 2019/10/24 20:36:28 by viroques         ###   ########.fr       */
+/*   Updated: 2019/10/30 18:22:30 by viroques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,17 @@ char	mapi(unsigned int i, char c)
 		return (c - 32);
 	return (c);
 }
+void 	*ft_fun(void *content)
+{
+	content++;
+	return (content);
+}
 
+void 	ft_del(void *content)
+{
+	free(content);
+	content = NULL;
+}
 int		main(int ac, char **argv)
 {
 
@@ -352,7 +362,9 @@ int		main(int ac, char **argv)
 	}
 	if (argv[2][0] == '2' || argv[1][0] == '2')
 	{
-		void *output;
+		void 	*output;
+		char	**tab;
+		int			i;
 
 		printf("PART 2\n");
 		printf("ft_substr\n");
@@ -405,10 +417,59 @@ int		main(int ac, char **argv)
 		ft_putchar_fd('\n', 1);
 		ft_putnbr_fd(10, 1);
 		ft_putchar_fd('\n', 1);
+
+		//ft_split
+		printf("ft_split\n");
+		printf("cutting  bonjour les  amis  \n");
+		tab = ft_split("  bonjour  les  amis  ", ' ');
+		i = 0;
+		while (tab[i])
+		{
+			printf("%s\n", tab[i]);
+			i++;
+		}
+		printf("cutting empty stirng\n");
+		tab = ft_split("", ' ');
+		printf("%s\n", tab[0]);
 	}
 
 	if ( argv[3][0] == '3' || argv[2][0] == '3' || argv[1][0] == '3')
 	{
-		printf("BONUS PART \n");
-	}
+		printf("\nBONUS PART \n");
+		t_list	*begin;
+		t_list	*elem;
+		t_list	*tmp;
+
+		// begin = ft_lstnew("bonjour");
+		// elem = ft_lstnew("hellow");
+		//tmp = elem;
+		begin = malloc(sizeof(t_list));
+		begin->content = "blablalbla";
+		begin->next = malloc(sizeof(t_list));
+		begin->next->next = malloc(sizeof(t_list));
+		begin->next->content = "blablabla";
+		begin->next->next->content = "blablabla";
+		begin->next->next->next = NULL;
+		tmp = ft_lstmap(begin, &ft_fun, &ft_del);
+		// ft_lstadd_back(&begin, elem);
+		// tmp = ft_lstlast(NULL);
+		// ft_lstsize(NULL);
+		// ft_lstdelone(elem, del);
+
+		// printf("%s\n", tmp->content);
+		// ft_lstadd_front(begin, elem);
+		// tmp = begin;
+		// ft_lstiter(begin, &ft_plusone);
+
+		while (tmp)
+		{
+			printf("%s\n", tmp->content);
+			tmp = tmp->next;
+		}
+		// while (begin)
+		// {
+		// 	printf(" ori %s\n", begin->content);
+		// 	begin = begin->next;
+		// }
+		}
 }

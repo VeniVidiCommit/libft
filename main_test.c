@@ -440,6 +440,8 @@ int		main(int ac, char **argv)
 		t_list	*elem;
 		t_list	*tmp;
 
+		//#define malloc(x) NULL
+
 		// begin = ft_lstnew("bonjour");
 		// elem = ft_lstnew("hellow");
 		//tmp = elem;

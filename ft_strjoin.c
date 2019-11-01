@@ -6,7 +6,7 @@
 /*   By: viroques <viroques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/13 17:32:45 by viroques          #+#    #+#             */
-/*   Updated: 2019/10/14 21:26:13 by viroques         ###   ########.fr       */
+/*   Updated: 2019/11/01 17:26:01 by viroques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	unsigned int	i;
-	unsigned int	j;
-	char			*str;
+	size_t	i;
+	size_t	j;
+	char	*str;
 
 	i = 0;
 	j = 0;
-	if (!(str = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2 + 1)))))
+	if (!(str = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1))))
 		return (NULL);
 	while (s1[i])
 	{

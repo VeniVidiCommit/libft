@@ -6,7 +6,7 @@
 /*   By: viroques <viroques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/13 18:38:01 by viroques          #+#    #+#             */
-/*   Updated: 2019/10/31 20:01:24 by viroques         ###   ########.fr       */
+/*   Updated: 2019/11/01 19:04:33 by viroques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	**ft_count_string(const char *s, char c)
 			string++;
 		i++;
 	}
-	if (!(tab = (char**)malloc(sizeof(char*) * string + 1)))
+	if (!(tab = (char**)malloc(sizeof(char*) * (string + 1))))
 		return (NULL);
 	return (tab);
 }
@@ -42,7 +42,7 @@ void	ft_count_letter(const char *s, char c, char **tab)
 	letter = 0;
 	while (s[i])
 	{
-		if (s[i] != c)
+		if (s[i] != c && s[i])
 			letter++;
 		if (s[i] != c && (s[i + 1] == c || s[i + 1] == '\0'))
 		{
@@ -69,7 +69,7 @@ void	ft_fill_tab(char const *s, char c, char **tab)
 	letter = 0;
 	while (s[i])
 	{
-		if (s[i] != c)
+		if (s[i] != c && s[i])
 		{
 			tab[string][letter] = s[i];
 			letter++;

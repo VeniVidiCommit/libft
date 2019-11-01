@@ -6,7 +6,7 @@
 /*   By: viroques <viroques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/13 17:47:45 by viroques          #+#    #+#             */
-/*   Updated: 2019/10/31 22:52:58 by viroques         ###   ########.fr       */
+/*   Updated: 2019/11/01 19:59:17 by viroques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ int		ft_remove(char c, const char *set)
 	size_t		i;
 	size_t		len;
 
-	i = 0;
 	len = ft_strlen(set);
-	while (i <= len)
+	i = 0;
+	while (i < len)
 	{
 		if (c == set[i])
 			return (1);
@@ -42,15 +42,11 @@ char	*ft_strtrim(char const *s1, char const *set)
 	len = ft_strlen(s1);
 	while (set && ft_remove(s1[i], set))
 		i++;
-	while (set && ft_remove(s1[len - 1], set))
+	while (set && len > 1 && ft_remove(s1[len - 1], set))
 		len--;
-	if (len < i)
-	{
-		if (!(str = malloc(sizeof(char) * 1)))
-			return (NULL);
-		str[0] = '\0';
-	}
+	if (i > len)
+		str = ft_calloc(1, 1);
 	else
-		str = ft_substr(s1, i, len);
+		str = ft_substr(s1, i, len - i);
 	return (str);
 }

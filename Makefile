@@ -40,4 +40,7 @@ bonus: all $(OBJS_BONUS)
 debug: CFLAGS += -g3
 debug: all bonus
 
+sanitize: CFLAGS += -fsanitize=address -g3
+sanitize: all bonus
+
 .PHONY: debug re fclean all $(NAME) bonus

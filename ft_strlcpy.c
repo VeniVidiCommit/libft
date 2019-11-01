@@ -6,7 +6,7 @@
 /*   By: viroques <viroques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/23 16:29:40 by viroques          #+#    #+#             */
-/*   Updated: 2019/10/23 16:46:29 by viroques         ###   ########.fr       */
+/*   Updated: 2019/10/31 21:33:31 by viroques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 	if (size == 0)
 		return (len);
 	i = 0;
-	while (dest[i] && i < size - 1)
+	while (src[i] && i < size - 1)
 	{
 		dest[i] = src[i];
 		i++;

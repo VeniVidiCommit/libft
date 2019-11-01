@@ -6,7 +6,7 @@
 /*   By: viroques <viroques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/13 21:09:00 by viroques          #+#    #+#             */
-/*   Updated: 2019/10/24 19:37:56 by viroques         ###   ########.fr       */
+/*   Updated: 2019/10/31 21:23:52 by viroques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ char	*ft_itoa(int n)
 	if (!(str = malloc(sizeof(char) * size + 1)))
 		return (NULL);
 	str[size] = '\0';
-	ft_fill_string(ABS((unsigned int)n), size - 1, str);
+	ft_fill_string(n < 0 ? -n : n, size - 1, str);
 	if (n < 0)
 		str[0] = '-';
 	return (str);

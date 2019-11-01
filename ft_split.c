@@ -6,7 +6,7 @@
 /*   By: viroques <viroques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/13 18:38:01 by viroques          #+#    #+#             */
-/*   Updated: 2019/10/30 14:48:02 by viroques         ###   ########.fr       */
+/*   Updated: 2019/10/31 20:01:24 by viroques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,8 @@ void	ft_count_letter(const char *s, char c, char **tab)
 		{
 			if (!(tab[string] = malloc(sizeof(char) * (letter + 1))))
 			{
-				while (tab[string--])
-					free(tab[string]);
+				while (tab[string])
+					free(tab[string--]);
 			}
 			string++;
 			letter = 0;

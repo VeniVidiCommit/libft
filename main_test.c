@@ -6,7 +6,7 @@
 /*   By: viroques <viroques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 14:39:29 by viroques          #+#    #+#             */
-/*   Updated: 2019/10/30 18:22:30 by viroques         ###   ########.fr       */
+/*   Updated: 2019/10/31 22:17:44 by viroques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,12 +71,15 @@ int		main(int ac, char **argv)
 		printf("\nft_memccpy TEST\n");
 		ERROR_STR(strncmp(ori, me, n));
 
-		//MEMMOVE
-		me = ft_memmove(dest1, src1, n);
-		ori = memmove(dest, src, n);
+		// MEMMOVE
+		char test4[] = "lorem ipsum dolor sit amet";
+		char test5[] = "lorem ipsum dolor sit amet";
+		char *d_test6 = test4 + 1;
+		char *d_test5 = test5 + 1;
+		me = ft_memmove(d_test6, test4, 8);
+		ori = memmove(d_test5 + 1, test5, 8);
 		printf("\nft_memmove TEST\n");
 		ERROR_STR(strncmp(ori, me, n));
-
 		//memchr
 		char found[] = "You need to found M, you will never found me";
 		c = 'M';
@@ -431,6 +434,8 @@ int		main(int ac, char **argv)
 		printf("cutting empty stirng\n");
 		tab = ft_split("", ' ');
 		printf("%s\n", tab[0]);
+		//ft_strtrim
+
 	}
 
 	if ( argv[3][0] == '3' || argv[2][0] == '3' || argv[1][0] == '3')

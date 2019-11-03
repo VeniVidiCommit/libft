@@ -6,7 +6,7 @@
 /*   By: viroques <viroques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 20:45:41 by victorianro       #+#    #+#             */
-/*   Updated: 2019/11/01 15:19:39 by viroques         ###   ########.fr       */
+/*   Updated: 2019/11/03 16:01:02 by viroques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,6 @@ void	*ft_calloc(size_t nmemb, size_t size)
 
 	if (!(ptr = malloc(nmemb * size)))
 		return (NULL);
-	ft_bzero(ptr, nmemb);
+	ft_bzero(ptr, nmemb * size);
 	return (ptr);
 }

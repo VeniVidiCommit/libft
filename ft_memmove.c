@@ -6,7 +6,7 @@
 /*   By: viroques <viroques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 13:31:45 by viroques          #+#    #+#             */
-/*   Updated: 2019/11/02 19:29:58 by viroques         ###   ########.fr       */
+/*   Updated: 2019/11/03 15:40:20 by viroques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 
 	tmp_dest = (unsigned char*)dest;
 	tmp_src = (unsigned char*)src;
+	if (!dest && !src)
+		return (NULL);
 	if (tmp_dest < tmp_src)
 		ft_memcpy(dest, src, n);
 	else

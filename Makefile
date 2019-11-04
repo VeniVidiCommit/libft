@@ -21,8 +21,10 @@ CFLAGS = -Wall -Werror -Wextra
 
 all: $(NAME)
 
+%.o: %.c
+	$(CC) -c $(CFLAGS) -o $@ $^
+
 $(NAME): ${OBJS}
-	@$(CC) -c $(CFLAGS) $(SRCS)
 	@ar rcs $(NAME) $(OBJS)
 
 clean:
@@ -43,4 +45,4 @@ debug: all bonus
 sanitize: CFLAGS += -fsanitize=address -g3
 sanitize: all bonus
 
-.PHONY: debug re fclean all $(NAME) bonus
+.PHONY: debug re fclean all bonus

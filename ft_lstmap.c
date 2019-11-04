@@ -6,7 +6,7 @@
 /*   By: viroques <viroques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/16 16:29:26 by viroques          #+#    #+#             */
-/*   Updated: 2019/10/30 18:22:06 by viroques         ###   ########.fr       */
+/*   Updated: 2019/11/04 21:01:12 by viroques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		{
 			if (!(new = ft_lstnew(f(tmp->content))))
 			{
-				free(begin);
-				ft_lstclear(&new, del);
+				ft_lstclear(&begin, del);
 				return (NULL);
 			}
 			ft_lstadd_back(&begin, new);

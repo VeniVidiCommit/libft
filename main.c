@@ -1,23 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: viroques <viroques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/11 20:45:41 by victorianro       #+#    #+#             */
-/*   Updated: 2019/11/04 21:17:57 by viroques         ###   ########.fr       */
+/*   Created: 2019/11/04 21:01:57 by viroques          #+#    #+#             */
+/*   Updated: 2019/11/04 21:18:33 by viroques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <libc.h>
+#include <stdio.h>
 
-void	*ft_calloc(size_t nmemb, size_t size)
+int		main()
 {
-	void	*ptr;
-
-	if (!(ptr = malloc(nmemb * size)))
-		return (NULL);
-	ft_bzero(ptr, nmemb * size);
-	return (ptr);
+	printf("%s\n", calloc(NULL,NULL));
 }

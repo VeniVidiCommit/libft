@@ -6,7 +6,7 @@
 /*   By: viroques <viroques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/14 20:55:15 by viroques          #+#    #+#             */
-/*   Updated: 2019/10/30 17:58:33 by viroques         ###   ########.fr       */
+/*   Updated: 2019/11/04 18:48:16 by viroques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,10 @@ void	ft_lstadd_back(t_list **alst, t_list *new)
 	{
 		if (*alst == NULL)
 			*alst = new;
-		tmp = ft_lstlast(*(alst));
-		if (!tmp)
-			return ;
-		tmp->next = new;
+		else
+		{
+			tmp = ft_lstlast(*(alst));
+			tmp->next = new;
+		}
 	}
 }

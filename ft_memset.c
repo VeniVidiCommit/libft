@@ -6,7 +6,7 @@
 /*   By: viroques <viroques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 13:36:11 by viroques          #+#    #+#             */
-/*   Updated: 2019/10/22 14:52:26 by viroques         ###   ########.fr       */
+/*   Updated: 2019/11/05 17:23:14 by viroques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,6 @@ void	*ft_memset(void *s, int c, size_t n)
 
 	tmp = (unsigned char*)s;
 	while (n--)
-		tmp[n] = (unsigned char)c;
+		*tmp++ = (unsigned char)c;
 	return (s);
 }

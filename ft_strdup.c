@@ -6,7 +6,7 @@
 /*   By: viroques <viroques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 20:50:06 by victorianro       #+#    #+#             */
-/*   Updated: 2019/11/06 21:12:05 by viroques         ###   ########.fr       */
+/*   Updated: 2019/11/07 19:46:29 by viroques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,17 @@
 
 char	*ft_strdup(const char *s)
 {
-	size_t	n;
+	size_t	i;
 	char	*s_copy;
 
 	if (!(s_copy = malloc(sizeof(char) * (ft_strlen(s) + 1))))
 		return (NULL);
-	n = 0;
-	while (s[n])
+	i = 0;
+	while (s[i])
 	{
-		s_copy[n] = s[n];
-		n++;
+		s_copy[i] = s[i];
+		i++;
 	}
-	s_copy[n] = '\0';
+	s_copy[i] = '\0';
 	return (s_copy);
 }

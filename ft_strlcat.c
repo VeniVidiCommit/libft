@@ -6,7 +6,7 @@
 /*   By: viroques <viroques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 18:56:10 by victorianro       #+#    #+#             */
-/*   Updated: 2019/11/01 20:26:20 by viroques         ###   ########.fr       */
+/*   Updated: 2019/11/07 19:48:43 by viroques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ size_t	ft_strlcat(char *dest, const char *src, size_t count)
 	i = ft_strlen(dest);
 	if (count == 0 || count <= i)
 		return (count + ft_strlen(src));
-	while (*src && i < count - 1)
+	while (i < count - 1 && *src)
 	{
 		dest[i] = *src;
 		src++;

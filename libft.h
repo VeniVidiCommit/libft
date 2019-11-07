@@ -6,7 +6,7 @@
 /*   By: viroques <viroques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 12:55:35 by viroques          #+#    #+#             */
-/*   Updated: 2019/10/31 21:24:36 by viroques         ###   ########.fr       */
+/*   Updated: 2019/11/07 23:56:04 by viroques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ char				*ft_strchr(const char *str, int c);
 char				*ft_strrchr(const char *s, int c);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 size_t				ft_strlcpy(char *dest, const char *src, size_t size);
-size_t				ft_strlcat(char *dest, const char *src, size_t count);
+size_t				ft_strlcat(char *dest, const char *src, size_t size);
 char				*ft_strnstr(const char *s1, const char *s2, size_t n);
 int					ft_atoi(const char *nptr);
 void				*ft_calloc(size_t nmemb, size_t size);

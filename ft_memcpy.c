@@ -6,7 +6,7 @@
 /*   By: viroques <viroques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 16:26:40 by viroques          #+#    #+#             */
-/*   Updated: 2019/11/05 17:24:06 by viroques         ###   ########.fr       */
+/*   Updated: 2019/11/12 16:34:46 by viroques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,19 @@
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	unsigned char	*tmp_dest;
-	unsigned char	*tmp_src;
+	int				i;
+	unsigned char	*str;
+	unsigned char	*str2;
 
-	if (!dest && !src)
+	i = 0;
+	str = (unsigned char*)dest;
+	str2 = (unsigned char*)src;
+	if (!str && !str2)
 		return (NULL);
-	tmp_dest = (unsigned char*)dest;
-	tmp_src = (unsigned char*)src;
-	while (n--)
-		*tmp_dest++ = *tmp_src++;
+	while ((size_t)i < n)
+	{
+		str[i] = str2[i];
+		i++;
+	}
 	return (dest);
 }

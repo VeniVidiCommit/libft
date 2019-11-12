@@ -6,7 +6,7 @@
 /*   By: viroques <viroques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 16:10:04 by viroques          #+#    #+#             */
-/*   Updated: 2019/11/05 18:59:51 by viroques         ###   ########.fr       */
+/*   Updated: 2019/11/12 16:35:51 by viroques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,14 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	size_t i;
-	size_t len;
+	int		i;
 
 	i = 0;
-	len = ft_strlen(s);
-	while (i <= len)
+	while (s[i] != c)
 	{
-		if (s[i] == c)
-			return ((char*)s + i);
+		if (s[i] == '\0')
+			return (NULL);
 		i++;
 	}
-	return (NULL);
+	return ((char*)&s[i]);
 }

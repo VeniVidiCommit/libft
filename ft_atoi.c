@@ -6,7 +6,7 @@
 /*   By: viroques <viroques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 20:07:54 by victorianro       #+#    #+#             */
-/*   Updated: 2019/10/23 18:28:47 by viroques         ###   ########.fr       */
+/*   Updated: 2019/11/12 16:56:44 by viroques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,24 @@
 
 int		ft_atoi(const char *nptr)
 {
-	int i;
-	int negativ;
-	int number;
+	int		i;
+	int		negativ;
+	int		res;
 
-	number = 0;
-	negativ = 1;
 	i = 0;
-	while (ft_isspace(nptr[i]) == 1)
+	negativ = 1;
+	res = 0;
+	while (nptr[i] == ' ' || nptr[i] == '\t' || nptr[i] == '\n'
+			|| nptr[i] == '\r' || nptr[i] == '\v' || nptr[i] == '\f')
 		i++;
-	if (nptr[i] == '-' || nptr[i] == '+')
+	if (nptr[i] == '-')
+		negativ = -1;
+	if (nptr[i] == '+' || nptr[i] == '-')
+		i++;
+	while (nptr[i] <= '9' && nptr[i] >= '0')
 	{
-		if (nptr[i] == '-')
-			negativ = -1;
+		res = res * 10 + nptr[i] - '0';
 		i++;
 	}
-	while (ft_isdigit(nptr[i]) == 1)
-	{
-		number = number * 10 + (nptr[i] - 48);
-		i++;
-	}
-	return (number * negativ);
+	return (res * negativ);
 }

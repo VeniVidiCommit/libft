@@ -6,7 +6,7 @@
 /*   By: viroques <viroques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/24 17:55:42 by viroques          #+#    #+#             */
-/*   Updated: 2019/11/12 20:05:39 by viroques         ###   ########.fr       */
+/*   Updated: 2019/11/12 21:20:28 by viroques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t			i;
 	char			*str;
 
-	if (!(str = malloc(sizeof(char) * (len - start + 1))) || !s)
+	if (!(str = malloc(sizeof(char) * (len + 1))) || !s)
 		return (NULL);
 	i = 0;
 	if (start < ft_strlen(s))

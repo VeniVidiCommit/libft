@@ -32,10 +32,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 {
 	char			*str;
 	size_t			i;
-	size_t			j;
 	size_t			len;
 
-	j = 0;
 	i = 0;
 	if (!s1)
 		return (NULL);
